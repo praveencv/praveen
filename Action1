@@ -1,0 +1,52 @@
+import fl.transitions.Rotate;
+import flash.events.KeyboardEvent;
+stage.addEventListener(KeyboardEvent.KEY_DOWN, fl_PressKeyToMove);
+function fl_PressKeyToMove(event:KeyboardEvent):void
+{
+	var xpos = 0;
+	switch (event.keyCode)
+	{
+		case Keyboard.UP :
+			{
+				if (button_1.y >= 30)
+				{
+
+					button_1.y -=  5;
+					button_1.rotationX = 0;
+					break;
+				}
+			};
+		case Keyboard.LEFT :
+			{
+				xpos = button_1.x;
+				if (xpos == 0)
+				{
+					button_1.x -=  5;
+					button_1.rotationX = 0;
+					
+				}
+				xpos = button_1.x;
+				break;
+			};
+		case Keyboard.DOWN :
+			{
+
+				button_1.y +=  5;
+				button_1.rotationX = 180;
+				break;
+
+
+			};
+
+		case Keyboard.RIGHT :
+			{
+				if (xpos >= 0)
+				{
+				button_1.x +=  5;
+				button_1.rotationX = 0;
+				break;
+				}
+
+		}
+	}
+};
